@@ -1,6 +1,24 @@
 Jansson README
 ==============
 
+-- Reserved escape string when parsing invalid unicode on the basis of 2.14.0.
+just use the (JSON_RESERVED_UNICODE_ESCAPE | JSON_ALLOW_NUL) flags when json_load*.
+
+such as:
+{
+  "key" : "\\uDC50"
+}
+
+Say 88 to the wrong "invalid Unicode '\uXXXX'".
+
+But this is not best way to solve the problem.
+When u run json_dumps...
+Result: {"key": "\\\\uDC50"}
+
+Welcome to fix it.
+
+==============
+
 .. image:: https://github.com/akheron/jansson/workflows/tests/badge.svg
   :target: https://github.com/akheron/jansson/actions
 
