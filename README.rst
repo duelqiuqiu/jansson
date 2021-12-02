@@ -5,6 +5,7 @@ Jansson README
 just use the (JSON_RESERVED_UNICODE_ESCAPE | JSON_ALLOW_NUL) flags when json_load*.
 
 such as:
+
 {
   "key" : "\\uDC50"
 }
