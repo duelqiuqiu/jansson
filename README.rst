@@ -1,7 +1,7 @@
 Jansson README
 ==============
 
--- Reserved escape string when parsing invalid unicode on the basis of 2.14.0.
+Reserved escape string when parsing invalid unicode on the basis of 2.14.0.
 just use the (JSON_RESERVED_UNICODE_ESCAPE | JSON_ALLOW_NUL) flags when json_load*.
 
 such as:
@@ -18,7 +18,7 @@ Result: {"key": "\\\\uDC50"}
 
 Welcome to fix it.
 
-==============
+----------------------------
 
 .. image:: https://github.com/akheron/jansson/workflows/tests/badge.svg
   :target: https://github.com/akheron/jansson/actions
