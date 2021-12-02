@@ -369,6 +369,16 @@ static void lex_scan_string(lex_t *lex, json_error_t *error) {
         if (*p == '\\') {
             p++;
             if (*p == 'u') {
+                /* add support invalid unicode unicode */
+                if(lex->flags & JSON_RESERVED_UNICODE_ESCAPE) {
+                    *t = '\\';
+                    t++;
+                    *t = *p;
+                    t++;
+                    p++;
+                    continue;
+                }
+                
                 size_t length;
                 int32_t value;
 
